@@ -43,3 +43,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Function Layer (US Layout)
 
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record)
+{
+    switch (keycode) {
+        case KC_LBRC:
+        case KC_RBRC:
+        case KC_QUOTE:
+            if (IS_LAYER_ON(PCSHFT)) {
+                if (record->event.pressed) {
+                    const uint8_t mods = get_mods();
+
+                    // Send without the mods
+                    del_mods(mods);
+                    register_code(keycode);
+                    set_mods(mods);
+                } else {
+                    unregister_code(keycode);
+                }
+                return false;
+            }
+    }
+    return true;
+}
