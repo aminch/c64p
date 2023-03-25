@@ -3,6 +3,9 @@
 
 #pragma once
 
+// Can't find this in the info.json
+#define COMBO_ONLY_FROM_LAYER 0
+
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.

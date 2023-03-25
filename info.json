@@ -5,10 +5,14 @@
     "bootloader": "rp2040",
     "diode_direction": "COL2ROW",
     "features": {
+        "combo": true,
         "command": false,
         "console": false,
         "extrakey": false,
         "nkro": false
+    },
+    "combo": {
+        "count": 2
     },
     "matrix_pins": {
         "ghost": true,
