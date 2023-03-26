@@ -89,3 +89,11 @@ Press `RUN/STOP + F3` to switch into BMC64 Mode
 Layout that should work with BMC64, right out of the box.
 
 ![BMC Layout layout](layouts/keyboard-pc-fn.png)
+
+# Others
+
+Other projects that can also be used to connect an original C64 keyboard via USB:
+
+* [Keymmodore](https://www.keymmodore.com/) - A USB interface for Commodore Computers Keyboards and Joysticks
+* [Retro Pico KMK Keyboards](https://github.com/midicdj1000/RETRO-PICO-KMK-Keyboards) - Uses KMK firmware to connect various retro keyboards including C64
+* [Cheap and Easy Arduino C64 Keyboard to USB Adapter](https://retrogamecoders.com/arduino-c64-usb-keyboard/)
