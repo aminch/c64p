@@ -2,10 +2,17 @@
 
 #include QMK_KEYBOARD_H
 
-#define PC              0   
-#define PCSHFT          1   
-#define PCFN            2   
-#define BMC64           3
+enum layer_number {
+    PC = 0,
+    PCSHFT,
+    PCFN,
+    BMC64
+};
+
+enum custom_keycodes {
+  PC_MODE = SAFE_RANGE,
+  BMC64_MODE
+};
 
 #define PCLSHFT LM(PCSHFT, MOD_LSFT)
 #define PCRSHFT LM(PCSHFT, MOD_RSFT)
@@ -13,8 +20,8 @@
 const uint16_t PROGMEM pc_layer_set_default[] = {KC_LALT, KC_F1, COMBO_END};
 const uint16_t PROGMEM bmc64_layer_set_default[] = {KC_LALT, KC_F3, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
-    COMBO(pc_layer_set_default, DF(PC)),
-    COMBO(bmc64_layer_set_default, DF(BMC64))
+    COMBO(pc_layer_set_default, PC_MODE),
+    COMBO(bmc64_layer_set_default, BMC64_MODE)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -85,6 +92,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
                 }
                 return false;
             }
+            break;
+
+        case PC_MODE:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(PC);
+            }
+            break;
+
+        case BMC64_MODE:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(BMC64);
+            }
+            break;
+
     }
     return true;
 }
