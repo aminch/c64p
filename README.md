@@ -88,7 +88,7 @@ Press `RUN/STOP + F3` to switch into BMC64 Mode
 
 Layout that should work with BMC64, right out of the box.
 
-![BMC Layout layout](layouts/keyboard-pc-fn.png)
+![BMC Layout layout](layouts/keyboard-bmc.png)
 
 # Others
 
