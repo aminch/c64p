@@ -1,6 +1,6 @@
 # Commodore 64 Pico (C64P)
 
-C64P is a firmware for the Raspberry Pi Pico to connect an original C64 keyboard via USB
+C64P is a [QMK](https://qmk.fm/) based keyboard firmware for the Raspberry Pi Pico to connect an original C64 keyboard via USB
 
 * Keyboard Maintainer: [aminch](https://github.com/aminch)
 * Hardware Supported: Raspberry Pi Pico and original Commodore 64 keyboard
@@ -8,7 +8,9 @@ C64P is a firmware for the Raspberry Pi Pico to connect an original C64 keyboard
 Supports PC and BMC64 modes:
 
 * PC Mode: Requires US Layout on PC, keyboard functions as a regular keyboard with shift and function layers.
+    * Press `RUN/STOP + F1` to switch into PC Mode
 * BMC64 Mode: Layout specifically for [BMC64](https://accentual.com/bmc64/), plug and play
+    * Press `RUN/STOP + F3` to switch into BMC64 Mode
 
 Note: Current mode will be retained even after the keyboard is disconnected.
 
@@ -70,6 +72,8 @@ Two different PCBs are also available:
 
 The PC must be using US layout for keyboard input
 
+Press `RUN/STOP + F1` to switch into PC Mode
+
 Brown keys are modified from original for modern input, and TAB/CTRL will TAB if tapped, or act as CTRL if held.
 
 ![PC Base layout](layouts/keyboard-pc-base.png)
@@ -79,6 +83,8 @@ Layout if the Fn (function) key is held
 ![PC Function layout](layouts/keyboard-pc-fn.png)
 
 ### BMC 64 Layout
+
+Press `RUN/STOP + F3` to switch into BMC64 Mode
 
 Layout that should work with BMC64, right out of the box.
 
