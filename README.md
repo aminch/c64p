@@ -97,3 +97,9 @@ Other projects that can also be used to connect an original C64 keyboard via USB
 * [Keymmodore](https://www.keymmodore.com/) - A USB interface for Commodore Computers Keyboards and Joysticks
 * [Retro Pico KMK Keyboards](https://github.com/midicdj1000/RETRO-PICO-KMK-Keyboards) - Uses KMK firmware to connect various retro keyboards including C64
 * [Cheap and Easy Arduino C64 Keyboard to USB Adapter](https://retrogamecoders.com/arduino-c64-usb-keyboard/)
+
+## Commodore Keyboard Matrix Information
+
+* [C64 VICE Front-End](https://www.waitingforfriday.com/?p=470) - An original project building a front end for VICE, and connection of original C64 keyboard and joysticks. Has great details on the layout of the C64 keyboard matrix.
+
+![C64 keyboard matrix](layouts/C64_Keyboard_Schematics_PNG.png)
