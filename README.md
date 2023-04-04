@@ -86,7 +86,7 @@ Layout if the Fn (function) key is held
 
 Press `RUN/STOP + F3` to switch into BMC64 Mode
 
-Layout that should work with BMC64, right out of the box.
+Layout that should work with BMC64, right out of the box. Remember to set the keyboard to use **positional** layout.
 
 ![BMC Layout layout](layouts/keyboard-bmc.png)
 
