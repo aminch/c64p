@@ -90,6 +90,10 @@ Layout that should work with BMC64, right out of the box. Remember to set the ke
 
 ![BMC Layout layout](layouts/keyboard-bmc.png)
 
+#### Testing
+
+[Keyboard Tester](https://csdb.dk/release/?id=98411) is a great tool to check the layout inside emulation when running BMC64.
+
 # Others
 
 Other projects that can also be used to connect an original C64 keyboard via USB:
