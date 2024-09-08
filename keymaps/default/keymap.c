@@ -17,12 +17,20 @@ enum custom_keycodes {
 #define PCLSHFT LM(PCSHFT, MOD_LSFT)
 #define PCRSHFT LM(PCSHFT, MOD_RSFT)
 
+enum combos {
+  PC_LAYER_SET_DEFAULT,
+  BMC64_LAYER_SET_DEFAULT
+};
+
+#ifdef COMBO_ENABLE
 const uint16_t PROGMEM pc_layer_set_default[] = {KC_LALT, KC_F1, COMBO_END};
 const uint16_t PROGMEM bmc64_layer_set_default[] = {KC_LALT, KC_F3, COMBO_END};
-combo_t key_combos[COMBO_COUNT] = {
-    COMBO(pc_layer_set_default, PC_MODE),
-    COMBO(bmc64_layer_set_default, BMC64_MODE)
+
+combo_t key_combos[] = {
+    [PC_LAYER_SET_DEFAULT] = COMBO(pc_layer_set_default, PC_MODE),
+    [BMC64_LAYER_SET_DEFAULT] = COMBO(bmc64_layer_set_default, BMC64_MODE)
 };
+#endif // COMBO_ENABLE
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
