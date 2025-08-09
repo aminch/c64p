@@ -5,6 +5,7 @@
 
 // Can't find this in the info.json
 #define COMBO_ONLY_FROM_LAYER 0
+#define COMBO_SHOULD_TRIGGER
 
 /*
  * Feature disable options

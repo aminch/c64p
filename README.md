@@ -11,6 +11,8 @@ Supports PC and BMC64 modes:
     * Press `RUN/STOP + F1` to switch into PC Mode
 * BMC64 Mode: Layout specifically for [BMC64](https://accentual.com/bmc64/), plug and play
     * Press `RUN/STOP + F3` to switch into BMC64 Mode
+* Vice Mode: Layout specifically for Vice Emulator. 
+    * Press `RUN/STOP + F5` to switch into Vice Mode
 
 Note: Current mode will be retained even after the keyboard is disconnected.
 
@@ -82,11 +84,26 @@ Layout if the Fn (function) key is held
 
 ![PC Function layout](layouts/keyboard-pc-fn.png)
 
-### BMC 64 Layout
+### BMC64 Layout
 
 Press `RUN/STOP + F3` to switch into BMC64 Mode
 
 Layout that should work with BMC64, right out of the box. Remember to set the keyboard to use **positional** layout.
+
+![BMC Layout layout](layouts/keyboard-bmc.png)
+
+### Vice Layout
+
+Press `RUN/STOP + F5` to switch into Vice Mode
+
+Layout should work with Vice emulator when paired with the correct vkm file (Suggested file: [sdl_c64p.vkm](https://github.com/aminch/vice-pi-compile/blob/main/data/C64/sdl_c64p.vkm)), and the operating system is set for a US keyboard layout. Remember to set the keyboard to use **positional** layout.
+
+Additional features:
+
+* Built in F12 combo with F1+F7 (to open Vice main menu)
+* Up or Left arrow keys will work when shift is held and Down or Right arrow keys are pressed, as shown on a C64 keyboard.
+
+**Note:** The Vice mode was built to support [this linked project](https://github.com/aminch/vice-pi-compile) which allow you to compile Vice onto a Raspberry Pi 4/5/400/500 running PiOS Lite, and then plug in an original C64 keyboard using this C64P keyboard adapter. It hasn't been tested in other setups. 
 
 ![BMC Layout layout](layouts/keyboard-bmc.png)
 
