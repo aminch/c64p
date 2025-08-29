@@ -1,9 +1,9 @@
 # Commodore 64 Pico (C64P)
 
-C64P is a [QMK](https://qmk.fm/) based keyboard firmware for the Raspberry Pi Pico to connect an original C64 keyboard via USB
+C64P is a [QMK](https://qmk.fm/) based keyboard firmware for the Raspberry Pi Pico or RP2040-Zero to connect an original C64 keyboard via USB
 
 * Keyboard Maintainer: [aminch](https://github.com/aminch)
-* Hardware Supported: Raspberry Pi Pico and original Commodore 64 keyboard
+* Hardware Supported: Raspberry Pi Pico or RP2040-Zero and original Commodore 64 keyboard
 
 Supports PC and BMC64 modes:
 
@@ -20,15 +20,47 @@ Building this firmware (after setting up your build environment, and checking ou
 
     qmk compile -kb c64p -km default
 
+or the following for the legacy pinout:
+
+    qmk compile -kb c64p -km default -e LEGACY_PINOUT=1
+
 Flashing for this firmware:
 
-    Drop the uf2 file onto the Pi Pico after connecting with the BOOTSEL key held down.
+    Drop the uf2 file onto the Pi Pico / RP2040-Zero after connecting with the BOOTSEL key held down.
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
 ## Pinout
 
-Connections between Pi Pico and C64 keyboard connector
+Connections between Pi Pico / RP2040-Zero and C64 keyboard connector for PCB v 2.0 and greater
+
+```
+        GPIO        C64 Keyboard 
+                        '-'
+        GP0     <-->    |O|--1 
+                        | |--2 Blank 
+        GP1     <-->    |O|--3 
+        NC      <-->    |O|--4 
+        GP3     <-->    |O|--5 
+        GP4     <-->    |O|--6 
+        GP5     <-->    |O|--7
+        GP6     <-->    |O|--8
+        GP7     <-->    |O|--9
+        GP8     <-->    |O|-10
+        GP9     <-->    |O|-11
+        GP10    <-->    |O|-12
+        GP11    <-->    |O|-13
+        GP12    <-->    |O|-14
+        GP13    <-->    |O|-15
+        GP14    <-->    |O|-16
+        GP15    <-->    |O|-17
+        GP26    <-->    |O|-18
+        GP27    <-->    |O|-19
+        GP28    <-->    |O|-20
+                        '-'
+```
+
+Legacy Pinout (Pi Pico only) for original PCBs
 
 ```
      Pico GPIO       C64 Keyboard 
