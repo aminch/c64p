@@ -14,11 +14,6 @@
     "combo": {
         "count": 2
     },
-    "matrix_pins": {
-        "ghost": true,
-        "cols": ["GP26", "GP22", "GP21", "GP20", "GP16", "GP17", "GP18", "GP19", "GP5"],
-        "rows": ["GP8",  "GP9",  "GP10", "GP11", "GP12", "GP13", "GP14", "GP15", "GP6"]
-    },
     "processor": "RP2040",
     "url": "https://github.com/aminch/c64p",
     "usb": {
