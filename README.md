@@ -32,7 +32,7 @@ The pinout was changed to support both a regular Pi Pico and a RP2040-Zero from 
 
 It's still possible to build the latest firmware with the original pinout to support older PCBs. 
 
-Build detail and full legacy documentation is found in the [LEGACY.md](legacy.md) readme.
+Build detail and full legacy documentation is found in the [LEGACY.md](LEGACY.md) readme.
 
 ## Schematic
 
