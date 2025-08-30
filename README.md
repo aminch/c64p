@@ -20,85 +20,42 @@ Building this firmware (after setting up your build environment, and checking ou
 
     qmk compile -kb c64p -km default
 
-or the following for the legacy pinout:
-
-    qmk compile -kb c64p -km default -e LEGACY_PINOUT=1
-
 Flashing for this firmware:
 
     Drop the uf2 file onto the Pi Pico / RP2040-Zero after connecting with the BOOTSEL key held down.
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
-## Pinout
+## Legacy
 
-Connections between Pi Pico / RP2040-Zero and C64 keyboard connector for PCB v 2.0 and greater
+The pinout was changed to support both a regular Pi Pico and a RP2040-Zero from v3.0 and onward from a single build. 
 
-```
-        GPIO        C64 Keyboard 
-                        '-'
-        GP0     <-->    |O|--1 
-                        | |--2 Blank 
-        GP1     <-->    |O|--3 
-        NC      <-->    |O|--4 
-        GP3     <-->    |O|--5 
-        GP4     <-->    |O|--6 
-        GP5     <-->    |O|--7
-        GP6     <-->    |O|--8
-        GP7     <-->    |O|--9
-        GP8     <-->    |O|-10
-        GP9     <-->    |O|-11
-        GP10    <-->    |O|-12
-        GP11    <-->    |O|-13
-        GP12    <-->    |O|-14
-        GP13    <-->    |O|-15
-        GP14    <-->    |O|-16
-        GP15    <-->    |O|-17
-        GP26    <-->    |O|-18
-        GP27    <-->    |O|-19
-        GP28    <-->    |O|-20
-                        '-'
-```
+It's still possible to build the latest firmware with the original pinout to support older PCBs. 
 
-Legacy Pinout (Pi Pico only) for original PCBs
+Build detail and full legacy documentation is found in the [LEGACY.md](legacy.md) readme.
 
-```
-     Pico GPIO       C64 Keyboard 
-                        '-'
-        GP5     <-->    |O|--1 
-                        | |--2 Blank 
-        GP6     <-->    |O|--3 
-        NC      <-->    |O|--4 
-        GP15    <-->    |O|--5 
-        GP14    <-->    |O|--6 
-        GP13    <-->    |O|--7
-        GP12    <-->    |O|--8
-        GP11    <-->    |O|--9
-        GP10    <-->    |O|-10
-        GP9     <-->    |O|-11
-        GP8     <-->    |O|-12
-        GP19    <-->    |O|-13
-        GP18    <-->    |O|-14
-        GP17    <-->    |O|-15
-        GP16    <-->    |O|-16
-        GP20    <-->    |O|-17
-        GP21    <-->    |O|-18
-        GP22    <-->    |O|-19
-        GP26    <-->    |O|-20
-                        '-'
-```
+## Schematic
 
-### PCBs
+![C64P Pico](pcb/Schematic_C64-Keyboard-Pico.png)
 
-Two different PCBs are also available:
+![C64P Zero](pcb/Schematic_C64-Keyboard-Zero.png)
 
-[C64P Case](pcb/Gerber_PCB_C64%20Keyboard_2023-03-25.zip), designed to be mounted inside an original C64C case
+## PCBs
 
-![C64P Case](pcb/c64p-case-pcb.png)
+PCBs are available in a number of different form factors for both the Pi Pico and RP2040-Zero. When ordering from your favourite PCB manufacturer be sure to check you have the right gerber file after uploading.
 
-[C64P Compact](pcb/Gerber_PCB_C64%20Keyboard_Compact_2023-03-25.zip), designed to be mounted on the back of the keyboard
+Note: all PCBs using the current pinout are labelled as v 2.0 or greater. They require v 3.0 or greater firmware uf2 files. 
 
-![C64P Compact](pcb/c64p-compact-pcb.png)
+### Pi Pico
+
+ * C64 Case Mount [Gerber](pcb/Gerber_C64-Keyboard-Pico_PCB_C64-Keyboard-Pico-Case-Mount_2025-08-30.zip) - [Image](pcb/c64p-pico-case-mount-pcb.png)
+ * Compact [Gerber](pcb/Gerber_C64-Keyboard-Pico_PCB_C64-Keyboard-Pico_2025-08-30.zip) - [Image](pcb/c64p-pico-pcb.png)
+
+### RP2040-Zero
+
+ * C64 Case Mount [Gerber](pcb/Gerber_C64-Keyboard-Zero_PCB_C64-Keyboard-Zero-Case-Mount_2025-08-30.zip) - [Image](pcb/c64p-zero-case-mount-pcb.png)
+ * Regular [Gerber](pcb/Gerber_C64-Keyboard-Zero_PCB_C64-Keyboard-Zero_2025-08-30.zip) - [Image](pcb/c64p-zero-pcb.png)
+ * Compact [Gerber](pcb/Gerber_C64-Keyboard-Zero_PCB_C64-Keyboard-Zero-Compact_2025-08-30.zip) - [Image](pcb/c64p-zero-compact-pcb.png)
 
 ## Layouts
 
