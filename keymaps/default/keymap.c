@@ -1,7 +1,9 @@
 // Copyright 2023 
 
 #include QMK_KEYBOARD_H
-#include "quantum/rgblight/rgblight.h"
+#ifndef LEGACY_PINOUT
+    #include "quantum/rgblight/rgblight.h"
+#endif
 
 enum layer_number {
     PC = 0,
@@ -165,6 +167,7 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
 }
 #endif
 
+#ifndef LEGACY_PINOUT
 void keyboard_post_init_user(void) {
   rgblight_setrgb_range(0, 0, 0, 0, 1);  // Off
   //rgblight_setrgb_range(25, 0, 0, 0, 1);  // Red
@@ -175,3 +178,4 @@ void keyboard_post_init_user(void) {
   //rgblight_setrgb_range(25, 25, 0, 0, 1);  // Yellow
   //rgblight_setrgb_range(25, 25, 25, 0, 1);  // White
 }
+#endif

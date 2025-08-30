@@ -13,8 +13,7 @@
         "command": false,
         "console": false,
         "extrakey": false,
-        "nkro": false,
-        "rgblight": true
+        "nkro": false
     },
     "combo": {
         "count": 2
