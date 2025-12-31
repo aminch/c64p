@@ -9,12 +9,12 @@
 
 // Only way to support legacy PCB pinout and current while keeping shared files
 #ifdef LEGACY_PINOUT
-    #define MATRIX_ROW_PINS { GP8,  GP9,  GP10, GP11, GP12, GP13, GP14, GP15, GP6 }
-    #define MATRIX_COL_PINS { GP26, GP22, GP21, GP20, GP16, GP17, GP18, GP19, GP5 }
+    #define MATRIX_ROW_PINS { GP8,  GP9,  GP10, GP11, GP12, GP13, GP14, GP15 }
+    #define MATRIX_COL_PINS { GP26, GP22, GP21, GP20, GP16, GP17, GP18, GP19 }
 #else // current pinout
     // Pinout introduced to support both Pi Pico and RP2040 from same build
-    #define MATRIX_ROW_PINS { GP10, GP9, GP8, GP7, GP6, GP5, GP4, GP3, GP1 }
-    #define MATRIX_COL_PINS { GP28, GP27, GP26, GP15, GP14, GP13, GP12, GP11, GP0 }
+    #define MATRIX_ROW_PINS { GP10, GP9,  GP8,  GP7,  GP6,  GP5,  GP4,  GP3  }
+    #define MATRIX_COL_PINS { GP28, GP27, GP26, GP15, GP14, GP13, GP12, GP11 }
 #endif
 
 #define MATRIX_HAS_GHOST   true
