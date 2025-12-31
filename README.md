@@ -26,6 +26,12 @@ Flashing for this firmware:
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
+## Compatibility
+
+The C64P is compatible with original C64 keyboards. 
+
+It is currently **NOT** compatible with Mechboard64, which requires the 5V connection to power the LEDs and shift lock mechanism.
+
 ## Legacy
 
 The pinout was changed to support both a regular Pi Pico and a RP2040-Zero from v3.0 and onward from a single build. 
