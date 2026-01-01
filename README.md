@@ -26,42 +26,73 @@ Flashing for this firmware:
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
-## Compatibility
-
-The C64P is compatible with original C64 keyboards. 
-
-It is currently **NOT** compatible with Mechboard64, which requires the 5V connection to power the LEDs and shift lock mechanism.
-
-## Legacy
-
-The pinout was changed to support both a regular Pi Pico and a RP2040-Zero from v3.0 and onward from a single build. 
-
-It's still possible to build the latest firmware with the original pinout to support older PCBs. 
-
-Build detail and full legacy documentation is found in the [LEGACY.md](LEGACY.md) readme.
-
 ## Schematic
 
-![C64P Pico](pcb/Schematic_C64-Keyboard-Pico.png)
+![C64P Pico](pcb/v4/Schematic_C64-Keyboard-Pico-v4.png)
 
-![C64P Zero](pcb/Schematic_C64-Keyboard-Zero.png)
+![C64P Zero](pcb/v4/Schematic_C64-Keyboard-Zero-v4.png)
 
 ## PCBs
 
 PCBs are available in a number of different form factors for both the Pi Pico and RP2040-Zero. When ordering from your favourite PCB manufacturer be sure to check you have the right gerber file after uploading.
 
-Note: all PCBs using the current pinout are labelled as v 2.0 or greater. They require v 3.0 or greater firmware uf2 files. 
+Note: all PCBs require firmware v4.0 or greater
 
 ### Pi Pico
 
- * C64 Case Mount [Gerber](pcb/Gerber_C64-Keyboard-Pico_PCB_C64-Keyboard-Pico-Case-Mount_2025-08-30.zip) - [Image](pcb/c64p-pico-case-mount-pcb.png)
- * Compact [Gerber](pcb/Gerber_C64-Keyboard-Pico_PCB_C64-Keyboard-Pico_2025-08-30.zip) - [Image](pcb/c64p-pico-pcb.png)
+ * C64 Case Mount [Gerber](pcb/v4/Gerber_C64-Keyboard-Pico-v4_PCB_C64-Keyboard-Pico-Case-Mount-v4_2026-01-01.zip) - [Image](pcb/v4/c64p-pico-case-mount-pcb-v4.png)
+ * Compact [Gerber](pcb/v4/Gerber_C64-Keyboard-Pico-v4_PCB_C64-Keyboard-Pico-v4_2026-01-01.zip) - [Image](pcb/v4/c64p-pico-pcb-v4.png)
 
 ### RP2040-Zero
 
- * C64 Case Mount [Gerber](pcb/Gerber_C64-Keyboard-Zero_PCB_C64-Keyboard-Zero-Case-Mount_2025-08-30.zip) - [Image](pcb/c64p-zero-case-mount-pcb.png)
- * Regular [Gerber](pcb/Gerber_C64-Keyboard-Zero_PCB_C64-Keyboard-Zero_2025-08-30.zip) - [Image](pcb/c64p-zero-pcb.png)
- * Compact [Gerber](pcb/Gerber_C64-Keyboard-Zero_PCB_C64-Keyboard-Zero-Compact_2025-08-30.zip) - [Image](pcb/c64p-zero-compact-pcb.png)
+ * C64 Case Mount [Gerber](pcb/v4/Gerber_C64-Keyboard-Zero-v4_PCB_C64-Keyboard-Zero-Case-Mount-v4_2026-01-01.zip) - [Image](pcb/v4/c64p-zero-case-mount-pcb-v4.png)
+ * Compact [Gerber](pcb/v4/Gerber_C64-Keyboard-Zero-v4_PCB_C64-Keyboard-Zero-Compact-v4_2026-01-01.zip) - [Image](pcb/v4/c64p-zero-compact-pcb-v4.png)
+
+## Compatibility
+
+Up until version 4.0 the versioning of the PCBs and firmware was not in sync and a mess. 
+
+From version 4.0, the plan is to have the PCB and firmware have matching major version numbers to make things simpler.
+
+### PCB / Firmware Compatibility Matrix
+
+Compatibility matrix of PCB (hardware) versions vs firmware (software) releases.
+
+ * Rows = PCB version. 
+ * Columns = firmware version (the version of the UF2 you flash).
+
+| PCB version | Firmware v1.x | Firmware v2.0 | Firmware v3.0 | Firmware v4.0 |
+| --- | --- | --- | --- | --- |
+| Unversioned (Legacy) | **Yes** | **Yes**  | **Yes** - (*legacy*) | **Yes** - (*legacy* + *PCB modification*) |
+| v2.0 | -- | -- | **Yes** | **Yes** - (*PCB modification*) |
+| v4.0 (Mechboard 64 support) | -- | -- | -- | **Yes** |
+
+Legend: 
+ * -- : Not supported
+ * Yes: `c64p_default.uf2` = use standard build 
+ * *legacy*: `c64p_legacy_default.uf2` = use legacy-pinout build (only applies to unversioned PCBs)
+ * *PCB modification*: Older PCBs can be modified to work with v4.0 or later firmware. See [MODIFICATIONS.md](MODIFICATIONS.md). Do this at your own risk!!
+
+### Keyboards
+
+The C64P is compatible with: 
+
+ * Original C64 keyboards
+ * [Mechboard 64](https://www.retrofuzion.com/products/mechboard-64-fully-backlit), with support added from version 4.0 onwards.
+
+To support the Mechboard 64, it needs to have the 5V on pin 4 of the C64 Keyboard header active. You can just connect the 5V directly from the Pico/RP2040-Zero, it works, kinda, but there is not enough stable voltage from the microcontroller to keep the LEDs a constant brightness. I have added a header which can take an optional Canton-Power DDO603SA 5V Buck-Boost Converter Module (search Aliexpress) which looks to have solved the problem. 
+
+If you are using an original C64 keyboard you can just leave the header for the DDO603SA unpopulated, it is not required.
+
+## History
+
+There have been three major PCB revisions of the C64P adapter and it's use in the [BMC64-PCB](https://github.com/aminch/bmc64-pcb) project.
+
+1. **Unversioned** - Original unversioned PCBs (different GPIO pin layout). PCBs have no version marking. [Details](LEGACY.md)
+2. **v2.0** - Support added for RP2040-Zero which required new GPIO pin layout. PCBs are marked with v2.0. [Details](VERSION2.md)
+3. **v4.0** - Support added for Mechboard 64. PCBs are marked with v4.0.
+
+Check the detail links above or the [MODIFICATIONS.md](MODIFICATIONS.md) readme if you are looking to continue to use an older PCB. Again, do this at your own risk!!
 
 ## Layouts
 
