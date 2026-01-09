@@ -26,6 +26,16 @@ Flashing for this firmware:
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
+## Revisions
+
+There have been three major PCB revisions of the C64P adapter and it's use in the [BMC64-PCB](https://github.com/aminch/bmc64-pcb) project.
+
+ * **v4.0** - Support added for Mechboard 64. PCBs are marked with v4.0.
+ * **v2.0** - Support added for RP2040-Zero which required new GPIO pin layout. PCBs are marked with v2.0. [Details](VERSION2.md) - **DEPRECATED**
+ * **Unversioned** - Original unversioned PCBs (different GPIO pin layout). PCBs have no version marking. [Details](LEGACY.md) - **DEPRECATED**
+
+Check the detail links above or the [MODIFICATIONS.md](MODIFICATIONS.md) readme if you are looking to continue to use an older PCB. Do this at your own risk!! If in doubt use the latests PCBs.
+  
 ## Schematic
 
 ![C64P Pico](pcb/v4/Schematic_C64-Keyboard-Pico-v4.png)
@@ -50,13 +60,11 @@ Note: all PCBs require firmware v4.0 or greater
 
 ## Compatibility
 
-Up until version 4.0 the versioning of the PCBs and firmware was not in sync and a mess. 
-
-From version 4.0, the plan is to have the PCB and firmware have matching major version numbers to make things simpler.
+Up until version 4.0 the versioning of the PCBs and firmware was not in sync and a mess. From version 4.0, the PCB and firmware have matching major version numbers to make things simpler.
 
 ### PCB / Firmware Compatibility Matrix
 
-Compatibility matrix of PCB (hardware) versions vs firmware (software) releases.
+Compatibility matrix of PCB (hardware) versions vs firmware (software) releases. Use this to select the correct firmware file to use if you are using an older PCB.
 
  * Rows = PCB version. 
  * Columns = firmware version (the version of the UF2 you flash).
@@ -83,16 +91,6 @@ The C64P is compatible with:
 To support the Mechboard 64, it needs to have the 5V on pin 4 of the C64 Keyboard header active. You can just connect the 5V directly from the Pico/RP2040-Zero, it works, kinda, but there is not enough stable voltage from the microcontroller to keep the LEDs a constant brightness. I have added a header which can take an optional Canton-Power DDO603SA 5V Buck-Boost Converter Module (search Aliexpress) which looks to have solved the problem. 
 
 If you are using an original C64 keyboard you can just leave the header for the DDO603SA unpopulated, it is not required.
-
-## History
-
-There have been three major PCB revisions of the C64P adapter and it's use in the [BMC64-PCB](https://github.com/aminch/bmc64-pcb) project.
-
-1. **Unversioned** - Original unversioned PCBs (different GPIO pin layout). PCBs have no version marking. [Details](LEGACY.md)
-2. **v2.0** - Support added for RP2040-Zero which required new GPIO pin layout. PCBs are marked with v2.0. [Details](VERSION2.md)
-3. **v4.0** - Support added for Mechboard 64. PCBs are marked with v4.0.
-
-Check the detail links above or the [MODIFICATIONS.md](MODIFICATIONS.md) readme if you are looking to continue to use an older PCB. Again, do this at your own risk!!
 
 ## Layouts
 
@@ -151,3 +149,7 @@ Other projects that can also be used to connect an original C64 keyboard via USB
 * [C64 VICE Front-End](https://www.waitingforfriday.com/?p=470) - An original project building a front end for VICE, and connection of original C64 keyboard and joysticks. Has great details on the layout of the C64 keyboard matrix.
 
 ![C64 keyboard matrix](layouts/C64_Keyboard_Schematics_PNG.png)
+
+# Disclaimer
+
+This project is just a fun personal experiment for education and is not intended for professional or commercial use. I'm not an electrical engineer, so please use any information, code, or designs here at your own risk.
