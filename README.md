@@ -30,7 +30,7 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 There have been three major PCB revisions of the C64P adapter and it's use in the [BMC64-PCB](https://github.com/aminch/bmc64-pcb) project.
 
- * **v4.0** - Support added for Mechboard 64. PCBs are marked with v4.0.
+ * **v4.0** - Support added for Mechboard 64 and Blingboard64. PCBs are marked with v4.0.
  * **v2.0** - Support added for RP2040-Zero which required new GPIO pin layout. PCBs are marked with v2.0. [Details](VERSION2.md) - **DEPRECATED**
  * **Unversioned** - Original unversioned PCBs (different GPIO pin layout). PCBs have no version marking. [Details](LEGACY.md) - **DEPRECATED**
 
@@ -87,8 +87,10 @@ The C64P is compatible with:
 
  * Original C64 keyboards
  * [Mechboard 64](https://www.retrofuzion.com/products/mechboard-64-fully-backlit), with support added from version 4.0 onwards.
+ * [Blingboard64](https://www.indiegogo.com/en/projects/cbmstuff/keyboard-for-your-commodore-computer#/), with support added from version 4.0 onwards.
+   * **Note**: The Blingboard64 can also be connected directly via USB without the need for the C64P. See the manufacturer's [website](https://www.cbmstuff.com/index.php?route=information/information&information_id=8).
 
-To support the Mechboard 64, it needs to have the 5V on pin 4 of the C64 Keyboard header active. You can just connect the 5V directly from the Pico/RP2040-Zero, it works, kinda, but there is not enough stable voltage from the microcontroller to keep the LEDs a constant brightness. I have added a header which can take an optional Canton-Power DDO603SA 5V Buck-Boost Converter Module (search Aliexpress) which looks to have solved the problem. 
+To support the Mechboard 64 and Blingboard64, it needs to have the 5V on pin 4 of the C64 Keyboard header active. You can just connect the 5V directly from the Pico/RP2040-Zero, it works, kinda, but there is not enough stable voltage from the microcontroller to keep the LEDs a constant brightness. I have added a header which can take an optional Canton-Power DDO603SA 5V Buck-Boost Converter Module (search Aliexpress) which looks to have solved the problem. 
 
 If you are using an original C64 keyboard you can just leave the header for the DDO603SA unpopulated, it is not required.
 

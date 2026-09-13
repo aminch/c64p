@@ -14,7 +14,7 @@ The steps are the same for any PCB. They are:
    * Note: This will be going to GPIO 5 on Unversioned boards and GPIO 0 on v2.0 boards. 
  * Connect Pin 1 on C64 header to GND on the Pico/RP2040-Zero. 
    * Any ground pin on the Pico/RP2040-Zero, it doesn't matter which.
- * The next step is **ONLY** needed if you want to support the Mechboard 64, you **DO NOT** need to do this for original C64 keyboards to work.
+ * The next step is **ONLY** needed if you want to support the Mechboard 64 or Blingboard64, you **DO NOT** need to do this for original C64 keyboards to work.
    * Connect Pin 4 on C64 header to VBUS or +5V on Pico/RP2040-Zero. 
    * Note: As explained in the [Keyboards section](README.md#keyboards), direct connection of the 5V from the microcontroller will lead to LEDs that will not have a consistent brightness. The older PCBs don't have space to add a DDO603SA, therefore your options are:
      * Wire up a DDO603SA as per the schematic and it will just hang loose from it's wires
