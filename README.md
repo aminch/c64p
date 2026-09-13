@@ -28,8 +28,9 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 ## Revisions
 
-There have been three major PCB revisions of the C64P adapter and it's use in the [BMC64-PCB](https://github.com/aminch/bmc64-pcb) project.
+There have been four major PCB revisions of the C64P adapter and it's use in the [BMC64-PCB](https://github.com/aminch/bmc64-pcb) project.
 
+ * **v5.0** - Added a jumper (U3) to switch the keyboard header between C64 and C16/Plus4 wiring. PCBs are marked with v5.0. See the [C16P project](https://github.com/aminch/c16p) for C16 keyboard usage.
  * **v4.0** - Support added for Mechboard 64 and Blingboard64. PCBs are marked with v4.0.
  * **v2.0** - Support added for RP2040-Zero which required new GPIO pin layout. PCBs are marked with v2.0. [Details](VERSION2.md) - **DEPRECATED**
  * **Unversioned** - Original unversioned PCBs (different GPIO pin layout). PCBs have no version marking. [Details](LEGACY.md) - **DEPRECATED**
@@ -38,25 +39,25 @@ Check the detail links above or the [MODIFICATIONS.md](MODIFICATIONS.md) readme 
   
 ## Schematic
 
-![C64P Pico](pcb/v4/Schematic_C64-Keyboard-Pico-v4.png)
+![C64P Pico](pcb/v5/Schematic_C64-Keyboard-Pico-v5.png)
 
-![C64P Zero](pcb/v4/Schematic_C64-Keyboard-Zero-v4.png)
+![C64P Zero](pcb/v5/Schematic_C64-Keyboard-Zero-v5.png)
 
 ## PCBs
 
 PCBs are available in a number of different form factors for both the Pi Pico and RP2040-Zero. When ordering from your favourite PCB manufacturer be sure to check you have the right gerber file after uploading.
 
-Note: all PCBs require firmware v4.0 or greater
+Note: all PCBs require firmware v5.0 or greater
 
 ### Pi Pico
 
- * C64 Case Mount [Gerber](pcb/v4/Gerber_C64-Keyboard-Pico-v4_PCB_C64-Keyboard-Pico-Case-Mount-v4_2026-01-01.zip) - [Image](pcb/v4/c64p-pico-case-mount-pcb-v4.png)
- * Compact [Gerber](pcb/v4/Gerber_C64-Keyboard-Pico-v4_PCB_C64-Keyboard-Pico-v4_2026-01-01.zip) - [Image](pcb/v4/c64p-pico-pcb-v4.png)
+ * C64 Case Mount [Gerber](pcb/v5/Gerber_C64-Keyboard-Pico-v5_PCB_C64-Keyboard-Pico-Case-Mount-v5_2026-09-13.zip) - [Image](pcb/v5/c64p-pico-case-mount-pcb-v5.png)
+ * Compact [Gerber](pcb/v5/Gerber_C64-Keyboard-Pico-v5_PCB_C64-Keyboard-Pico-v5_2026-09-13.zip) - [Image](pcb/v5/c64p-pico-compact-pcb-v5.png)
 
 ### RP2040-Zero
 
- * C64 Case Mount [Gerber](pcb/v4/Gerber_C64-Keyboard-Zero-v4_PCB_C64-Keyboard-Zero-Case-Mount-v4_2026-01-01.zip) - [Image](pcb/v4/c64p-zero-case-mount-pcb-v4.png)
- * Compact [Gerber](pcb/v4/Gerber_C64-Keyboard-Zero-v4_PCB_C64-Keyboard-Zero-Compact-v4_2026-01-01.zip) - [Image](pcb/v4/c64p-zero-compact-pcb-v4.png)
+ * C64 Case Mount [Gerber](pcb/v5/Gerber_C64-Keyboard-Zero-v5_PCB_C64-Keyboard-Zero-Case-Mount-v5_2026-09-13.zip) - [Image](pcb/v5/c64p-zero-case-mount-pcb-v5.png)
+ * Compact [Gerber](pcb/v5/Gerber_C64-Keyboard-Zero-v5_PCB_C64-Keyboard-Zero-Compact-v5_2026-09-13.zip) - [Image](pcb/v5/c64p-zero-compact-pcb-v5.png)
 
 ## Compatibility
 
@@ -69,17 +70,19 @@ Compatibility matrix of PCB (hardware) versions vs firmware (software) releases.
  * Rows = PCB version. 
  * Columns = firmware version (the version of the UF2 you flash).
 
-| PCB version | Firmware v1.x | Firmware v2.0 | Firmware v3.0 | Firmware v4.0 |
-| --- | --- | --- | --- | --- |
-| Unversioned (Legacy) | **Yes** | **Yes**  | **Yes** - (*legacy*) | **Yes** - (*legacy* + *PCB modification*) |
-| v2.0 | -- | -- | **Yes** | **Yes** - (*PCB modification*) |
-| v4.0 (Mechboard 64 support) | -- | -- | -- | **Yes** |
+| PCB version | Firmware v1.x | Firmware v2.0 | Firmware v3.0 | Firmware v4.0 | Firmware v5.0 |
+| --- | --- | --- | --- | --- | --- |
+| Unversioned (Legacy) | **Yes** | **Yes**  | **Yes** - (*legacy*) | **Yes** - (*legacy* + *PCB modification*) | **Yes** - (*legacy* + *PCB modification*) |
+| v2.0 | -- | -- | **Yes** | **Yes** - (*PCB modification*) | **Yes** - (*PCB modification*) |
+| v4.0 (Mechboard 64 support) | -- | -- | -- | **Yes** | **Yes** |
+| v5.0 (C64/C16 jumper support) | -- | -- | -- | **Yes** (*C64 mode*) | **Yes** (*C64 mode*) |
 
 Legend: 
  * -- : Not supported
  * Yes: `c64p_default.uf2` = use standard build 
  * *legacy*: `c64p_legacy_default.uf2` = use legacy-pinout build (only applies to unversioned PCBs)
  * *PCB modification*: Older PCBs can be modified to work with v4.0 or later firmware. See [MODIFICATIONS.md](MODIFICATIONS.md). Do this at your own risk!!
+ * *C64 mode*: Firmware from this repository only work with the jumper in C64 mode. See [C16P project](https://github.com/aminch/c16p) for C16 usage.
 
 ### Keyboards
 
