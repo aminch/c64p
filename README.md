@@ -31,7 +31,7 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 There have been four major PCB revisions of the C64P adapter and it's use in the [BMC64-PCB](https://github.com/aminch/bmc64-pcb) project.
 
  * **v5.0** - Added a jumper (U3) to switch the keyboard header between C64 and C16/Plus4 wiring. PCBs are marked with v5.0. See the [C16P project](https://github.com/aminch/c16p) for C16 keyboard usage.
- * **v4.0** - Support added for Mechboard 64 and Blingboard64. PCBs are marked with v4.0.
+ * **v4.0** - Support added for Mechboard 64 and Blingboard64. PCBs are marked with v4.0. [Details](VERSION4.md) - **DEPRECATED**
  * **v2.0** - Support added for RP2040-Zero which required new GPIO pin layout. PCBs are marked with v2.0. [Details](VERSION2.md) - **DEPRECATED**
  * **Unversioned** - Original unversioned PCBs (different GPIO pin layout). PCBs have no version marking. [Details](LEGACY.md) - **DEPRECATED**
 
