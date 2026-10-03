@@ -17,7 +17,7 @@
     #define MATRIX_COL_PINS { GP28, GP27, GP26, GP15, GP14, GP13, GP12, GP11 }
 #endif
 
-#define MATRIX_HAS_GHOST   true
+#define MATRIX_HAS_GHOST
 
 /*
  * Feature disable options
