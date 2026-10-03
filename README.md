@@ -82,7 +82,7 @@ Legend:
  * Yes: `c64p_default.uf2` = use standard build 
  * *legacy*: `c64p_legacy_default.uf2` = use legacy-pinout build (only applies to unversioned PCBs)
  * *PCB modification*: Older PCBs can be modified to work with v4.0 or later firmware. See [MODIFICATIONS.md](MODIFICATIONS.md). Do this at your own risk!!
- * *C64 mode*: Firmware from this repository only work with the jumper in C64 mode. See [C16P project](https://github.com/aminch/c16p) for C16 usage.
+ * *C64 mode*: Firmware from this repository only works with the jumper in C64 mode. See [C16P project](https://github.com/aminch/c16p) for C16 usage.
 
 ### Keyboards
 
@@ -96,6 +96,8 @@ The C64P is compatible with:
 To support the Mechboard 64 and Blingboard64, it needs to have the 5V on pin 4 of the C64 Keyboard header active. You can just connect the 5V directly from the Pico/RP2040-Zero, it works, kinda, but there is not enough stable voltage from the microcontroller to keep the LEDs a constant brightness. I have added a header which can take an optional Canton-Power DDO603SA 5V Buck-Boost Converter Module (search Aliexpress) which looks to have solved the problem. 
 
 If you are using an original C64 keyboard you can just leave the header for the DDO603SA unpopulated, it is not required.
+
+Note: See the [C16P project](https://github.com/aminch/c16p) if you want to use a C16 keyboard.
 
 ## Layouts
 
